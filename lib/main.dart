@@ -65,11 +65,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 150,
                 width: 300,
                 margin: EdgeInsets.all(10),
-                color: Colors.blueGrey[200],
+                color: Colors.blueGrey[100],
                 child: const Center(child: Text('Container')),
               ),
               Container(
-                color: Colors.blueGrey[200],
+                color: Colors.blueGrey[100],
                 height: 150,
                 width: 77,
                 child: IconButton(
@@ -122,11 +122,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 150,
                 width: 300,
                 margin: EdgeInsets.all(10),
-                color: Colors.blueGrey[200],
+                color: Colors.blueGrey[300],
                 child: const Center(child: Text('Network')),
               ),
               Container(
-                color: Colors.blueGrey[200],
+                color: Colors.blueGrey[300],
                 height: 150,
                 width: 77,
                 child: IconButton(
@@ -150,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 150,
                 width: 300,
                 margin: EdgeInsets.all(10),
-                color: Colors.blueGrey[200],
+                color: Colors.blueGrey[400],
                 child: Text(
                   'Volume',
                   textAlign: TextAlign.end,
@@ -158,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Container(
-                color: Colors.blueGrey[200],
+                color: Colors.blueGrey[400],
                 height: 150,
                 width: 77,
                 child: IconButton(
