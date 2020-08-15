@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'ui/FirstScreen.dart';
-import 'ui/ContScreen.dart';
+import 'ui/container/ContScreen.dart';
 import 'ui/ImgScreen.dart';
 import 'ui/NetScreen.dart';
 
@@ -74,6 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: 77,
                 child: IconButton(
                     //child: Text("click"),
+
                     icon: Icon(Icons.arrow_forward_ios),
                     onPressed: () {
                       print("pressed");
@@ -152,6 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.blueGrey[200],
                 child: Text(
                   'Volume',
+                  textAlign: TextAlign.end,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
