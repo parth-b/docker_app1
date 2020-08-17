@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'ui/FirstScreen.dart';
+import 'ui/VolScreen.dart';
 import 'ui/container/ContScreen.dart';
 import 'ui/ImgScreen.dart';
-import 'ui/NetScreen.dart';
+import 'ui/network/NetScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -169,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.push(
                         context,
                         new MaterialPageRoute(
-                          builder: (context) => FirstScreen(),
+                          builder: (context) => VolScreen(),
                         ),
                       );
                     }),

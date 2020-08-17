@@ -11,22 +11,106 @@ class _ContScreenState extends State<ContScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("hello"),
+        title: Text("Container"),
       ),
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
             DrawerHeader(
-              child: Text("Container cmds"),
+              margin: EdgeInsets.all(7),
+              child: Text("Container Commands"),
+              decoration: BoxDecoration(
+                color: Colors.blueGrey.shade200,
+              ),
             ),
             ListTile(
-              title: Text("create container"),
+              title: Text("create"),
               onTap: () {
-                Navigator.pop(context);
-
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => ContRun()));
                 //Navigator.push(context, route)
               },
-            )
+            ),
+            ListTile(
+              title: Text("ls"),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => ContRun()));
+                //Navigator.push(context, route)
+              },
+            ),
+            ListTile(
+              title: Text("commit"),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => ContRun()));
+                //Navigator.push(context, route)
+              },
+            ),
+            ListTile(
+              title: Text("exec"),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => ContRun()));
+                //Navigator.push(context, route)
+              },
+            ),
+            ListTile(
+              title: Text("inspect"),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => ContRun()));
+                //Navigator.push(context, route)
+              },
+            ),
+            ListTile(
+              title: Text("kill/stop"),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => ContRun()));
+                //Navigator.push(context, route)
+              },
+            ),
+            ListTile(
+              title: Text("logs/top "),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => ContRun()));
+                //Navigator.push(context, route)
+              },
+            ),
+            ListTile(
+              title: Text("rename"),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => ContRun()));
+                //Navigator.push(context, route)
+              },
+            ),
+            ListTile(
+              title: Text("restart"),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => ContRun()));
+                //Navigator.push(context, route)
+              },
+            ),
+            ListTile(
+              title: Text("remove"),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => ContRun()));
+                //Navigator.push(context, route)
+              },
+            ),
+            ListTile(
+              title: Text("run"),
+              onTap: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => ContRun()));
+                //Navigator.push(context, route)
+              },
+            ),
           ],
         ),
       ),
@@ -36,10 +120,7 @@ class _ContScreenState extends State<ContScreen> {
             height: 75,
             child: IconButton(
               icon: Icon(Icons.ac_unit),
-              onPressed: () {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) => ContRun()));
-              },
+              onPressed: null,
             ),
           ),
         ],
