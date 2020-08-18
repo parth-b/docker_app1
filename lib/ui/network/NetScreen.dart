@@ -1,6 +1,10 @@
+import 'package:docker_app/ui/network/NetConnect.dart';
 import 'package:docker_app/ui/network/NetCreate.dart';
+import 'package:docker_app/ui/network/NetDisconnect.dart';
+import 'package:docker_app/ui/network/NetInspect.dart';
+import 'package:docker_app/ui/network/NetLs.dart';
+import 'package:docker_app/ui/network/NetRm.dart';
 import 'package:flutter/material.dart';
-//import 'ui/network/NetCreate.dart';
 
 class NetScreen extends StatefulWidget {
   @override
@@ -25,8 +29,13 @@ class _NetScreenState extends State<NetScreen> {
               ),
             ),
             ListTile(
-              title: Text("connect"),
-            ),
+                title: Text("connect"),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) => NetConnect()));
+                }),
             ListTile(
                 title: Text("create"),
                 onTap: () {
@@ -34,17 +43,33 @@ class _NetScreenState extends State<NetScreen> {
                       new MaterialPageRoute(builder: (context) => NetCreate()));
                 }),
             ListTile(
-              title: Text("disconnect"),
-            ),
+                title: Text("disconnect"),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) => NetDisconnect()));
+                }),
             ListTile(
-              title: Text("inspect"),
-            ),
+                title: Text("inspect"),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) => NetInspect()));
+                }),
             ListTile(
-              title: Text("ls"),
-            ),
+                title: Text("list"),
+                onTap: () {
+                  Navigator.push(context,
+                      new MaterialPageRoute(builder: (context) => NetLs()));
+                }),
             ListTile(
-              title: Text("rm"),
-            ),
+                title: Text("rm"),
+                onTap: () {
+                  Navigator.push(context,
+                      new MaterialPageRoute(builder: (context) => NetRm()));
+                }),
           ],
         ),
       ),

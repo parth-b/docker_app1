@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
-class ContRun extends StatefulWidget {
+class NetInspect extends StatefulWidget {
   @override
-  _ContRunState createState() => _ContRunState();
+  _NetInspectState createState() => _NetInspectState();
 }
 
-class _ContRunState extends State<ContRun> {
-  var x, y, z, t;
+class _NetInspectState extends State<NetInspect> {
+  var x;
   var data;
-  web(x, y, z, t) async {
-    var res = await http
-        .get('http://192.168.29.144/cgi-bin/createcont.py?x=$x&y=$y&z=$z&t=$t');
+  web(x) async {
+    var res =
+        await http.get('http://192.168.29.160/cgi-bin/netinspect.py?x=$x');
     var sol = res.body;
 
     setState(() {
@@ -24,7 +24,7 @@ class _ContRunState extends State<ContRun> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("hello"),
+          title: Text("Inspect Network"),
         ),
         body: SizedBox.expand(
           child: DraggableScrollableSheet(
@@ -35,17 +35,15 @@ class _ContRunState extends State<ContRun> {
                 child: Container(
                   child: Column(
                     children: <Widget>[
-                      //FlatButton(onPressed: null, child: Text("hello")),
                       Container(
                         child: Card(
                           margin: EdgeInsets.only(top: 40),
                           child: Image.network(
-                            "https://www.docker.com/sites/default/files/d8/styles/role_icon/public/2019-07/Docker-Logo-White-RGB_Horizontal.png?itok=cFIHFZiP",
+                            "https://www.google.com/imgres?imgurl=https%3A%2F%2Ff1.pngfuel.com%2Fpng%2F493%2F426%2F408%2Fweb-design-icon-internet-web-browser-icon-design-web-button-computer-network-symbol-logo-png-clip-art.png&imgrefurl=https%3A%2F%2Fwww.pngfuel.com%2Ffree-png%2Frpbeu&tbnid=shxgVvbuc7ZWEM&vet=12ahUKEwju58nMwqLrAhXK3XMBHWH3CQcQMygRegUIARD6AQ..i&docid=djFAkZ7EtEwdKM&w=910&h=512&q=network%20symbol&ved=2ahUKEwju58nMwqLrAhXK3XMBHWH3CQcQMygRegUIARD6AQ",
                             alignment: Alignment.bottomCenter,
                           ),
                         ),
                       ),
-
                       Padding(
                         padding: const EdgeInsets.only(right: 30, left: 30),
                         child: Card(
@@ -59,69 +57,9 @@ class _ContRunState extends State<ContRun> {
                               print(x);
                             },
                             decoration: InputDecoration(
-                              hintText: "type in the name of the os...",
+                              hintText: "Enter the name of network",
                               filled: true,
                               fillColor: Colors.amber.shade400,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 30, left: 30),
-                        child: Card(
-                          elevation: 10,
-                          margin: EdgeInsets.only(top: 10),
-                          child: TextField(
-                            autocorrect: false,
-                            //expands: true,
-                            onChanged: (value) {
-                              y = value;
-                              print(y);
-                            },
-                            decoration: InputDecoration(
-                              hintText: "give the image name...",
-                              filled: true,
-                              fillColor: Colors.amber.shade300,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 30, left: 30),
-                        child: Card(
-                          elevation: 10,
-                          margin: EdgeInsets.only(top: 10),
-                          child: TextField(
-                            autocorrect: false,
-                            //expands: true,
-                            onChanged: (value) {
-                              z = value;
-                              print(z);
-                            },
-                            decoration: InputDecoration(
-                              hintText: "network...",
-                              filled: true,
-                              fillColor: Colors.amber.shade200,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 30, left: 30),
-                        child: Card(
-                          elevation: 10,
-                          margin: EdgeInsets.only(top: 10),
-                          child: TextField(
-                            autocorrect: false,
-                            //expands: true,
-                            onChanged: (value) {
-                              t = value;
-                              //print(t);
-                            },
-                            decoration: InputDecoration(
-                              hintText: "volume...",
-                              filled: true,
-                              fillColor: Colors.amber.shade100,
                             ),
                           ),
                         ),
@@ -131,9 +69,9 @@ class _ContRunState extends State<ContRun> {
                         child: RaisedButton(
                           onPressed: () {
                             //print('pressed');
-                            web(x, y, z, t);
+                            web(x);
                           },
-                          child: Text("press"),
+                          child: Text("Press"),
                         ),
                       ),
                       Container(
@@ -142,7 +80,7 @@ class _ContRunState extends State<ContRun> {
                           children: [
                             Container(
                               child: Text(
-                                "your output:",
+                                "Output:",
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontFamily: "Pangolin",
